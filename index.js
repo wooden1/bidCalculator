@@ -18,23 +18,44 @@ const BiddingCalculator = (function () {
   const profit = document.querySelector('#profit')
   const total = document.querySelector('#total')
   const sumOverheadBtn = document.querySelector('#get-overhead-sum')
-  const contratorInfoForm = document.querySelector('#contractor-info_form')
-  const goodsSoldBtn = document.querySelector('.form-send_btn')
-
+  const contractorInfoForm = document.querySelector('#contractor-info_form')
+  const goodsSoldBtn = document.querySelector('.goods-sold_btn')
+  const getSum = document.querySelector('.get-sum')
   const overheadCosts = document.querySelectorAll('.overhead-costs')
+  const collapsibleContent = document.querySelectorAll('.collapsible')
 
   function eventListeners() {
     addRowButton.addEventListener('click', (event) => addRow(event))
 
     sumOverheadBtn.addEventListener('click', (event) => {
       totalOverhead.value = overheadCost(event)
-      overheadCosts.value = ''
       // sumOFTotals(event))
     })
     goodsSoldBtn.addEventListener('click', (event) => {
-      costOfGoodsSoldTotal(event)
-      costOfGoodsValue.value = ''
+      totalCostOFGoodsSold.value = goodsCost(event)
     })
+    getSum.addEventListener('click', (event) => {
+      total.value = sumOFTotals(event)
+    })
+
+  }
+
+  // Allow for collapsing of fields
+  function collapsibleFields() {
+    console.log("called");
+    console.log(collapsibleContent);
+    collapsibleContent.forEach(element => {
+      
+      element.addEventListener('click', (event) => {
+        console.log('click')
+      element.classList.toggle('active')
+      let content = event.target.nextElementSibling
+      // content.style.display = "block"
+      content.classList.toggle("collapsed")
+
+      })
+    });
+     
   }
 
   // Adds a new cost of goods sold row
@@ -42,12 +63,12 @@ const BiddingCalculator = (function () {
     const newRow = document.createElement('div')
     newRow.classList.add('cost-for-goods-sold')
     newRow.innerHTML = costForGoodsSold.innerHTML
-    return contratorInfoForm.appendChild(newRow)
+    return contractorInfoForm.appendChild(newRow)
   }
 
   // TODO:  abstract function to work with both total overhead and cost of goods sold totals
   //? input values should clear after getting total overhead
-  function overheadCost() {
+  function overheadCost(numbers) {
     const overheadValArr = []
     for (let i = 0; i < overheadCosts.length; i++) {
       if (typeof overheadCosts[i].value !== NaN) {
@@ -64,14 +85,31 @@ const BiddingCalculator = (function () {
       .toFixed(2)
   }
 
-  function sumOFTotals() {
-    return (total.value =
-      parseFloat(totalOverhead) + parseFloat() + parseFloat(profit))
+
+  function goodsCost() {
+    const costOfGoodsValArr = []
+    for (let i = 0; i < costOfGoodsValue.length; i++) {
+      if (typeof costOfGoodsValue[i].value !== NaN) {
+        costOfGoodsValArr.push(parseFloat(costOfGoodsValue[i].value))
+      } else {
+        // TODO: Create UI error message
+        console.log('Error: Please enter Numbers only')
+      }
+    }
+
+    return costOfGoodsValArr
+      .filter((value) => !Number.isNaN(value))
+      .reduce((accumulator, currentValue) => accumulator + currentValue)
+      .toFixed(2)
   }
 
+  function sumOFTotals() {
+    return parseFloat(totalCostOFGoodsSold.value) + parseFloat(totalOverhead.value) + parseFloat(profit.value)
+  }
+  collapsibleFields()
   eventListeners()
 
-  // pseudo code for connecting to backend api
+  // pseudo code for connecting to backend api.
 
   const url = 'http://backend-api.com/contract-bid_calculator-data.json'
   const bidForm = document.querySelector('.bid-form')
@@ -83,7 +121,7 @@ const BiddingCalculator = (function () {
     contractorTotalOverhead: overhead,
     contractorTotalCostForGoodsSold: TotalCostForGoodsSold,
     contractorProfit: profit,
-    contracorOverheadSum: overheadSum,
+    contractorOverheadSum: overheadSum,
   }
   // send data to backend
   const postReq = {

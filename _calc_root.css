@@ -102,7 +102,7 @@ button {
   width: 3.5rem;
 }
 
-.form-send_btn {
+.goods-sold_btn {
   width: 100%;
   border-radius: 5%;
   margin-top: 0.5rem;
@@ -110,4 +110,38 @@ button {
 
 #overhead {
   margin-top: 1.2rem;
+}
+
+.collapsible{
+  cursor: pointer;
+  float: right;
+  padding: 2px;
+  margin: 0;
+  text-align: center;
+  /* width: 100%; */
+}
+
+.active, .collapsible:hover{
+  background-color: var(--form-bg);
+}
+.collapsible:after{
+  content: "\02796";
+  font-size: 13px;
+  color: #eee;
+  margin-left: 5px;
+
+}
+.active:after{
+  content: "\2795"
+}
+
+.collapsible-content{
+  /* padding: 0 1.1px; */
+  display: block;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  
+}
+.collapsed{
+  display: none;
 }

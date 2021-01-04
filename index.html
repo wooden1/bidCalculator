@@ -16,7 +16,8 @@
       <h1>Contract Bidding Calculator</h1>
       <section id="contractor-info">
         <fieldset id="contractor-info_form">
-          <label for="name">Name:</label><input type="text" id="name" name="name">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" autofocus>
 
           <!-- provide email validation pattern -->
           <label for="email">Email:</label>
@@ -31,26 +32,135 @@
         </fieldset>
 
         <button type="button" class="add-row">Add Row </button>
-        <button type="button" class="form-send_btn">Cost of goods sold</button>
+        <button type="button" class="goods-sold_btn">Cost of goods sold</button>
       </section>
 
       <section id="overhead">
-        <h2>Overhead</h2>
+
+        <h1>Overhead</h1>
         <fieldset>
           <legend>Computer</legend>
-          <label for="IT-expenses">IT Expenses</label>
-          <input type="text" id="IT-expenses" name="IT-expenses" class="overhead-costs">
-          <label for="computer-expenses">Computer Expenses</label>
-          <input type="text" id="computer-expenses" name="computer-expenses" class="overhead-costs">
-          <label for="software-expenses">Software Expenses</label>
-          <input type="text" id="software-expenses" name="software-expenses" class="overhead-costs">
+          <button type="button" class="collapsible">
+          
+          </button>
+          <div class="collapsible-content">
+            <label for="IT-expenses">IT Expenses</label>
+            <input type="text" id="IT-expenses" name="IT-expenses" class="overhead-costs">
+            <label for="computer-expenses">Computer Expenses</label>
+            <input type="text" id="computer-expenses" name="computer-expenses" class="overhead-costs">
+            <label for="software-expenses">Software Expenses</label>
+            <input type="text" id="software-expenses" name="software-expenses" class="overhead-costs">
+          </div>  
         </fieldset>
+
+
         <fieldset>
-          <legend>Maintenance</legend>
-          <label for="tools">Tools</label>
-          <input type="text" id="tools" name="tools" class="overhead-costs">
-          <label for="facility-maintenance-costs">Facility maintenance costs</label>
-          <input type="text" id="facility-maintenance-costs" name="facility-maintenance-costs" class="overhead-costs">
+          <legend>Equipment</legend>
+          <button type="button" class="collapsible"></button>
+          <div class="collapsible-content">
+            <label for="tools">Tools</label>
+            <input type="text" id="tools" name="tools" class="overhead-costs">
+            <label for="facility-maintenance-costs">Facility maintenance costs</label>
+            <input type="text" id="facility-maintenance-costs" name="facility-maintenance-costs" class="overhead-costs">
+            <label for="facility furnishings">Facility Furnishings</label>
+            <input type="text" id="facility-furnishings" name="facility-furnishings">
+          </div>
+        </fieldset>
+
+
+        <fieldset>
+          <legend>Misc.</legend>
+          <button type="button" class="collapsible"></button>
+          <div class="collapsible-content">
+            <label for="R&D">Research & Development</label>
+            <input type="text" id="r&d" name="r&d">
+
+            <label for="marketing">Marketing</label>
+            <input type="text" id="marketing" name="marketing">
+            
+            <label for="business-insurance">Business Insurance</label>
+            <input type="text" id="business-insurance" name="business-insurance">
+            
+            <label for="customer-service">Customer Service</label>
+            <input type="text" id="customer-service" name="customer-service">
+          
+            <label for="gov-registrations">Government Registrations</label>
+            <input type="text" id="gov-registrations" name="gov-registrations">
+          
+            <label for="office-supplies">Office Supplies</label>
+            <input type="text" id="office-supplies" name="office-supplies">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Professional Expenses</legend>
+          <button type="button" class="collapsible"></button>
+          <div class="collapsible-content">
+            <label for="accounting">Accounting</label>
+            <input type="text" id="accounting" name="accounting">
+
+        
+            <label for="legal-expenses" id="" name="">Legal Expenses</label>
+            <input type="text" id="legal-expenses" name="legal-expenses">
+            </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Rent & Utilities</legend>
+          <button type="button" class="collapsible"></button>
+          <div class="collapsible-content">
+            <label for="rent">Rent</label>
+            <input type="text" id="rent" name="rent">
+
+            <label for="electricity">Electricity</label>
+            <input type="text" id="electricity" name="electricity">
+
+            <label for="water">Water</label>
+            <input type="text" id="water" name="water">
+
+            <label for="gas">Gas</label>
+            <input type="text" id="gas" name="gas">
+          </div>
+        </fieldset>
+
+
+         <fieldset>
+           <legend>Staffing</legend>
+           <button type="button" class="collapsible"></button>
+           <div class="collapsible-content">
+            <label for="mgnt-overhead">Management Overhead</label>
+            <input type="text" id="mgnt-overhead" name="mgnt-overhead">
+
+            <label for="training">Training</label>
+            <input type="text" id="training" name="training">
+
+            <label for="professional-development">Professional Development</label>
+            <input type="text" id="professional-development" name="professional-development">
+
+            <label for="recruitment-costs">Recruitment Costs</label>
+            <input type="text" id="recruitment-costs" name="recruitment-costs">
+
+            <label for="payroll-expenses">Payroll Expenses</label>
+            <input type="text" id="payroll-expenses" name="payroll-expenses">
+            </div>
+         </fieldset>
+
+        <fieldset>
+          <legend>Vehicle</legend>
+          <button type="button" class="collapsible"></button>
+          <div class="collapsible-content">
+            <label for="company-vehicle">Company Vehicle</label>
+            <input type="text" id="company-vehicle" name="company-vehicle">
+
+            <label for="vehicle-maintenance">Vehicle Maintenance</label>
+            <input type="text" id="vehicle-maintenance" name="vehicle-maintenance">
+
+            <label for="vehicle-fuel">Vehicle Fuel</label>
+            <input type="text" id="vehicle-fuel" name="vehicle-fuel">
+
+            <label for="auto-insurance">Auto Insurance</label>
+            <input type="text" id="auto-insurance" name="auto-insurance">
+          </div>
         </fieldset>
 
         <div>
@@ -67,13 +177,14 @@
           <label for="profit">Profit</label>
           <input type="text" id="profit" name="profit">
         </div>
-        <button type="button" id="get-overhead-sum">Get Total</button>
+        <button type="button" id="get-overhead-sum">Get Overhead Total</button>
 
         <div>
           <label for="total">Total</label>
           <input type="text" id="total" name="total">
         </div>
       </section>
+      <button type="button" class="get-sum"> Sum of all fields</button>
       <button type="submit" class="form-send_btn">Send</button>
     </form>
   </main>
