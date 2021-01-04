@@ -1,0 +1,113 @@
+:root {
+  /* Margins and padding */
+  --pd-unit: 4px;
+  --pd-1x: calc(var(--pd-unit) * 1);
+  --pd-2x: calc(var(--pd-unit) * 2);
+  --pd-3x: calc(var(--pd-unit) * 3);
+  --pd-4x: calc(var(--pd-unit) * 4);
+  --mg-unit: 4px;
+  --mg-1x: calc(var(--pd-unit) * 1);
+  --mg-2x: calc(var(--pd-unit) * 2);
+  --mg-3x: calc(var(--pd-unit) * 3);
+  --mg-4x: calc(var(--pd-unit) * 4);
+
+  /* Colors */
+  --bg-clr: #feca57;
+  --form-bg: #cccccc;
+  --cell-bg: #446084;
+  --cell-border: #1b2a3d;
+  --font-heading-color: hsl(65, 46%, 95%);
+  --font-color: hsl(0, 0%, 15%);
+  --btn-action: hsl(120, 26%, 35%);
+  --btn-danger: hsl(0, 43%, 48%);
+
+  /* text/font classes */
+  --text-sm: 12px;
+  --text-imp: 14px;
+  --text-heading: 16px;
+  --font-wt: 400;
+  --font-heading-wt: 600;
+
+  /* Input values */
+  --text-input-padding: var(--pd-2x);
+  --text-input-size: var(--text-imp);
+
+  /* Border */
+  --border_radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--font-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main content container */
+.container {
+  background-color: var(--bg-clr);
+  display: grid;
+  margin: 0.3rem auto;
+  text-align: center;
+  padding: var(--pd-2x);
+  margin: 0 auto 0.1em auto;
+  width: 100%;
+}
+
+/* Bid Form*/
+.bid-form {
+  background-color: var(--form-bg);
+  display: table;
+  padding: var(--pd-2x);
+  margin: auto;
+  /* width: 100%; */
+}
+
+fieldset {
+  margin: 0.3rem auto;
+  padding: 0.3rem;
+}
+
+h1 {
+  border: solid 1px var(--cell-border);
+  border-radius: var(--border_radius);
+  margin-bottom: 1.2rem;
+  /* margin-bottom: var(--mg-2x); */
+}
+
+.form-table {
+  display: table-row;
+}
+
+label,
+input {
+  border-radius: var(--border_radius);
+  display: table-cell;
+  padding: 0.3em;
+  width: 100%;
+}
+
+input {
+  background-color: var(--cell-bg);
+  margin-bottom: var(--mg-2x);
+  padding: var(--pd-1x);
+}
+
+button {
+  background-color: var(--cell-bg);
+  border-radius: 50%;
+  background-clip: padding-box;
+  padding: 0.2em;
+  font-size: var(--text-imp);
+  width: 3.5rem;
+}
+
+.form-send_btn {
+  width: 100%;
+  border-radius: 5%;
+  margin-top: 0.5rem;
+}
+
+#overhead {
+  margin-top: 1.2rem;
+}

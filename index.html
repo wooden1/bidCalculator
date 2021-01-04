@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="_calc_root.css">
+  <title>Bidding Calculator Form</title>
+</head>
+
+<body>
+  <!-- use action attribute to sent data to backend ex: action="/contract_bidder.php" -->
+  <main class="container">
+
+    <form action="" method="get" class="bid-form">
+      <h1>Contract Bidding Calculator</h1>
+      <section id="contractor-info">
+        <fieldset id="contractor-info_form">
+          <label for="name">Name:</label><input type="text" id="name" name="name">
+
+          <!-- provide email validation pattern -->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+          <label for="industry">Industry:</label>
+          <input type="text" id="industry" name="industry">
+
+          <div class="cost-for-goods-sold">
+            <label for="cost-of-goods-sold">Cost of goods sold:</label>
+            <input type="text" name="cost-of-goods-sold" class="cost-of-goods-sold">
+          </div>
+        </fieldset>
+
+        <button type="button" class="add-row">Add Row </button>
+        <button type="button" class="form-send_btn">Cost of goods sold</button>
+      </section>
+
+      <section id="overhead">
+        <h2>Overhead</h2>
+        <fieldset>
+          <legend>Computer</legend>
+          <label for="IT-expenses">IT Expenses</label>
+          <input type="text" id="IT-expenses" name="IT-expenses" class="overhead-costs">
+          <label for="computer-expenses">Computer Expenses</label>
+          <input type="text" id="computer-expenses" name="computer-expenses" class="overhead-costs">
+          <label for="software-expenses">Software Expenses</label>
+          <input type="text" id="software-expenses" name="software-expenses" class="overhead-costs">
+        </fieldset>
+        <fieldset>
+          <legend>Maintenance</legend>
+          <label for="tools">Tools</label>
+          <input type="text" id="tools" name="tools" class="overhead-costs">
+          <label for="facility-maintenance-costs">Facility maintenance costs</label>
+          <input type="text" id="facility-maintenance-costs" name="facility-maintenance-costs" class="overhead-costs">
+        </fieldset>
+
+        <div>
+          <label for="total-overhead">Total Overhead
+          </label>
+          <input type="text" id="total-overhead" name="total-overhead">
+        </div>
+        <div>
+          <label for="total-cost-of-goods-sold">Total Cost of Goods Sold</label>
+          <input type="text" id="total-cost-of-goods-sold" name="total-cost-of-goods-sold">
+        </div>
+        <div>
+
+          <label for="profit">Profit</label>
+          <input type="text" id="profit" name="profit">
+        </div>
+        <button type="button" id="get-overhead-sum">Get Total</button>
+
+        <div>
+          <label for="total">Total</label>
+          <input type="text" id="total" name="total">
+        </div>
+      </section>
+      <button type="submit" class="form-send_btn">Send</button>
+    </form>
+  </main>
+</body>
+<script src="index.js"></script>
+
+</html>
