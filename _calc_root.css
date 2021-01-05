@@ -20,6 +20,13 @@
   --font-color: hsl(0, 0%, 15%);
   --btn-action: hsl(120, 26%, 35%);
   --btn-danger: hsl(0, 43%, 48%);
+  --darkBlue: #123e54;
+  --mediumBlue: #79bfe2;
+  --lightBlue: #cde7f4;
+  --lightOrange: #fad189;
+  --mediumOrange: #f08700;
+  --darkOrange: #522e00;
+
 
   /* text/font classes */
   --text-sm: 12px;
@@ -27,7 +34,9 @@
   --text-heading: 16px;
   --font-wt: 400;
   --font-heading-wt: 600;
-
+   /* Font Family  */
+   --text-font: 'Montserrat';
+   --header-font: 'Oswald';
   /* Input values */
   --text-input-padding: var(--pd-2x);
   --text-input-size: var(--text-imp);
@@ -41,40 +50,62 @@
   color: var(--font-color);
   margin: 0;
   padding: 0;
+  font-family: var(--text-font);
+
+
 }
 
 /* Main content container */
 .container {
-  background-color: var(--bg-clr);
+  /* background-color: var(--bg-clr); */
   display: grid;
-  margin: 0.3rem auto;
+  /* margin: 0.3rem auto; */
   text-align: center;
   padding: var(--pd-2x);
-  margin: 0 auto 0.1em auto;
   width: 100%;
 }
 
 /* Bid Form*/
 .bid-form {
-  background-color: var(--form-bg);
+  /* background-color: var(--mediumBlue);
+  */
+  border-radius: 51px;
+  background: var(--mediumBlue);
+  box-shadow: inset 6px -6px 26px #69a6c5,
+  inset -6px 6px 26px #89d8ff;
+  border-radius: 10px;
   display: table;
   padding: var(--pd-2x);
   margin: auto;
-  /* width: 100%; */
+  /* border: 2px solid var(--mediumOrange); */
+  
 }
-
+legend{
+  color: var(--darkOrange);
+  font-weight: bolder;
+}
 fieldset {
-  margin: 0.3rem auto;
+  font-weight: bold;
+  margin: 1rem auto;
   padding: 0.3rem;
 }
-
-h1 {
+h1{
+  padding: .1em;
+  width: 100%;
+  /* margin: 0 auto; */
+}
+h1, h2 {
+  background-color: var(--lightBlue);
   border: solid 1px var(--cell-border);
   border-radius: var(--border_radius);
+  color: var(--darkOrange);
+  font-family: var(--header-font);  
   margin-bottom: 1.2rem;
   /* margin-bottom: var(--mg-2x); */
 }
-
+h2{
+  font-size: 1.7rem;
+}
 .form-table {
   display: table-row;
 }
@@ -88,23 +119,31 @@ input {
 }
 
 input {
-  background-color: var(--cell-bg);
+  background-color: var(--lightOrange) ;
   margin-bottom: var(--mg-2x);
   padding: var(--pd-1x);
 }
-
+.add-row{
+  background: none;
+  
+}
 button {
-  background-color: var(--cell-bg);
-  border-radius: 50%;
+  /* background-color: var(--lightBlue); */
   background-clip: padding-box;
+  /* border: 2px solid var(--darkBlue); */
+  border-radius: 51px;
+  background: #123e54;
+  box-shadow: inset 6px -6px 26px #103649,
+  inset -6px 6px 26px #14465f;
+  color: var(--lightOrange);
   padding: 0.2em;
   font-size: var(--text-imp);
-  width: 3.5rem;
+  width: 100%;
+  overflow: hidden;
 }
-
 .goods-sold_btn {
   width: 100%;
-  border-radius: 5%;
+  /* border-radius: 5%; */
   margin-top: 0.5rem;
 }
 
@@ -113,35 +152,37 @@ button {
 }
 
 .collapsible{
-  cursor: pointer;
-  float: right;
+  position: relative;
   padding: 2px;
-  margin: 0;
   text-align: center;
-  width: 10%;
+  width: 100%;
 }
-
-.active, .collapsible:hover{
-  background-color: var(--form-bg);
+.totals-btn{
+  margin: 2rem auto;
 }
 .collapsible:after{
-  content: "\02796";
+  position: absolute;
+  top: 0;
+  right: 100px;
+  /* content: "\02795"; */
   font-size: 13px;
-  color: #eee;
+  /* color: #eee; */
   margin-left: 5px;
 
-}
-.active:after{
-  content: "\2795"
 }
 
 .collapsible-content{
   /* padding: 0 1.1px; */
   display: block;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  /* transition: max-height 0.3s ease-out; */
   
 }
-.collapsed{
-  display: none;
+.collapsible> .collapsible-content{
+  /* display: none; */
+}
+.form-send_btn{
+  display: block;
+  margin-top: 1rem;
+  /* width: 100%; */
 }

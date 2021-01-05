@@ -1,4 +1,4 @@
-// TODO: create btn to fill total cost of goods sold
+
 const BiddingCalculator = (function () {
   ; ('use strict')
   const bid_info = []
@@ -23,6 +23,7 @@ const BiddingCalculator = (function () {
   const getSum = document.querySelector('.get-sum')
   const overheadCosts = document.querySelectorAll('.overhead-costs')
   const collapsibleContent = document.querySelectorAll('.collapsible')
+  const formSubmitBtn = document.querySelector('.form-send_btn')
 
   function eventListeners() {
     addRowButton.addEventListener('click', (event) => addRow(event))
@@ -37,9 +38,21 @@ const BiddingCalculator = (function () {
     getSum.addEventListener('click', (event) => {
       total.value = sumOFTotals(event)
     })
+    formSubmitBtn.addEventListener('click', (event) => {
+      
+      console.log('clicked works!');
+      
+    })
 
   }
-
+  function collapseFields() {
+    const fieldset = document.getElementsByTagName('fieldset')
+  Array.from(fieldset).forEach((element) => {
+      element.addEventListener('click', (event) => {
+        console.log(element);
+        element.classList.toggle('collapsible')
+    })
+  })}
   // Allow for collapsing of fields
   function collapsibleFields() {
     console.log("called");
@@ -48,8 +61,10 @@ const BiddingCalculator = (function () {
       
       element.addEventListener('click', (event) => {
         console.log('click')
+        if (event.target.tagName != 'fieldset') return
       element.classList.toggle('active')
-      let content = event.target.nextElementSibling
+      let content = event.target
+  
       // content.style.display = "block"
       content.classList.toggle("collapsed")
 
@@ -104,10 +119,12 @@ const BiddingCalculator = (function () {
   }
 
   function sumOFTotals() {
-    return parseFloat(totalCostOFGoodsSold.value) + parseFloat(totalOverhead.value) + parseFloat(profit.value)
+    return (parseFloat(totalCostOFGoodsSold.value) + parseFloat(totalOverhead.value) + parseFloat(profit.value)).toFixed(2)
   }
-  collapsibleFields()
+  collapseFields()
+  // collapsibleFields()
   eventListeners()
+
 
   // pseudo code for connecting to backend api.
 
@@ -141,7 +158,7 @@ const BiddingCalculator = (function () {
     return Promise.reject(new Error(response.statusText))
   }
 
-  // checks that response status is greenlit
+  // checks that response status is green lit
   function checkStatus(response) {
     if (response.ok) {
       return Promise.resolve(response)
