@@ -18,10 +18,10 @@
       <h1>Contract Bidding Calculator</h1>
       <section id="contractor-info">
         <fieldset id="contractor-info_form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" autofocus required>
+          <label for="contractor-name">Name:</label>
+          <input type="text" class="contractorName" name="contractorName" autofocus required>
 
-          <!-- provide email validation pattern -->
+          <!-- TODO: provide email validation pattern -->
           <!-- pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
           [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" -->
           <label for="email">Email:</label>
@@ -63,7 +63,7 @@
             
             
             
-            
+          
             
         </div>
 
@@ -90,8 +90,8 @@
           <!-- <button type="button" class="collapsible"></button> -->
           <div class="collapsible-content">
 
-            <label for="R&D">Research & Development</label>
-            <input type="text" id="r&d" name="r&d" class="overhead-costs" class="overhead-costs">
+            <label for="R-and-D">Research & Development</label>
+            <input type="text" id="R-and-D" name="R-and-D" class="overhead-costs" class="overhead-costs">
 
             <label for="marketing">Marketing</label>
             <input type="text" id="marketing" name="marketing" class="overhead-costs">
@@ -180,7 +180,7 @@
             <input type="text" id="auto-insurance" name="auto-insurance" class="overhead-costs">
           </div>
         </fieldset>
-
+        <!-- TODO: FIXME: add bold font weight -->
         <div class="totals-btn">
           <button type="button" id="get-overhead-sum">Overhead Total</button>
           <button type="button" class="goods-sold_btn">Cost of Goods Sold Total</button>
