@@ -1,0 +1,12 @@
+{
+  "folders": [
+	{
+		"path": "."
+	}
+],
+  "remoteAuthority": "wsl+Ubuntu-20.04",
+  "settings": {
+    "git.ignoreLimitWarning": true,
+    "liveServer.settings.multiRootWorkspaceName": "bidCalculator"
+  }
+}

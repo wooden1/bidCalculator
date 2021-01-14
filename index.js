@@ -1,7 +1,6 @@
-
 const BiddingCalculator = (function () {
-  ; ('use strict')
-  const bid_info = []
+  ;('use strict')
+  let inputs = document.querySelectorAll('input')
 
   const addRowButton = document.querySelector('.add-row')
 
@@ -30,7 +29,6 @@ const BiddingCalculator = (function () {
 
     sumOverheadBtn.addEventListener('click', (event) => {
       totalOverhead.value = overheadCost(event)
-      // sumOFTotals(event))
     })
     goodsSoldBtn.addEventListener('click', (event) => {
       totalCostOFGoodsSold.value = goodsCost(event)
@@ -38,39 +36,40 @@ const BiddingCalculator = (function () {
     getSum.addEventListener('click', (event) => {
       total.value = sumOFTotals(event)
     })
-    formSubmitBtn.addEventListener('click', (event) => {
-      
-      console.log('clicked works!');
-      
-    })
+    formSubmitBtn
+      .addEventListener('click', (event) => {
+        console.log('SEND FORM DATA!!')
+      })
 
+      .addEventListener('change', () => {
+        console.log('get values')
+      })
   }
+
   function collapseFields() {
     const fieldset = document.getElementsByTagName('fieldset')
-  Array.from(fieldset).forEach((element) => {
-      element.addEventListener('click', (event) => {
-        console.log(element);
+    Array.from(fieldset).forEach((element) => {
+      element.addEventListener('click', () => {
+        console.log(element.ch)
         element.classList.toggle('collapsible')
+      })
     })
-  })}
+  }
   // Allow for collapsing of fields
   function collapsibleFields() {
-    console.log("called");
-    console.log(collapsibleContent);
-    collapsibleContent.forEach(element => {
-      
+    console.log('called')
+    console.log(collapsibleContent)
+    collapsibleContent.forEach((element) => {
       element.addEventListener('click', (event) => {
         console.log('click')
         if (event.target.tagName != 'fieldset') return
-      element.classList.toggle('active')
-      let content = event.target
-  
-      // content.style.display = "block"
-      content.classList.toggle("collapsed")
+        element.classList.toggle('active')
+        let content = event.target
 
+        // content.style.display = "block"
+        content.classList.toggle('collapsed')
       })
-    });
-     
+    })
   }
 
   // Adds a new cost of goods sold row
@@ -100,7 +99,6 @@ const BiddingCalculator = (function () {
       .toFixed(2)
   }
 
-
   function goodsCost() {
     const costOfGoodsValArr = []
     for (let i = 0; i < costOfGoodsValue.length; i++) {
@@ -117,14 +115,24 @@ const BiddingCalculator = (function () {
       .reduce((accumulator, currentValue) => accumulator + currentValue)
       .toFixed(2)
   }
-
-  function sumOFTotals() {
-    return (parseFloat(totalCostOFGoodsSold.value) + parseFloat(totalOverhead.value) + parseFloat(profit.value)).toFixed(2)
+  function zeroedInputs() {
+    fixedZero = 0
+    fixedZero.toFixed(2)
+    for (const input in inputs) {
+      input.value = input.value || fixedZero
+    }
   }
+  function sumOFTotals() {
+    return (
+      parseFloat(totalCostOFGoodsSold.value) +
+      parseFloat(totalOverhead.value) +
+      parseFloat(profit.value)
+    ).toFixed(2)
+  }
+  // zeroedInputs()
   collapseFields()
-  // collapsibleFields()
+  collapsibleFields()
   eventListeners()
-
 
   // pseudo code for connecting to backend api.
 
@@ -149,7 +157,7 @@ const BiddingCalculator = (function () {
     body: JSON.stringify(BidCalculatorPostData),
   }
 
-  function listener(event) { }
+  function listener(event) {}
   // ping server
   function status(response) {
     if (response.status >= 200 && response.status < 300) {

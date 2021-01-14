@@ -27,16 +27,15 @@
   --mediumOrange: #f08700;
   --darkOrange: #522e00;
 
-
   /* text/font classes */
   --text-sm: 12px;
   --text-imp: 14px;
   --text-heading: 16px;
   --font-wt: 400;
   --font-heading-wt: 600;
-   /* Font Family  */
-   --text-font: 'Montserrat';
-   --header-font: 'Oswald';
+  /* Font Family  */
+  --text-font: 'Montserrat';
+  --header-font: 'Oswald';
   /* Input values */
   --text-input-padding: var(--pd-2x);
   --text-input-size: var(--text-imp);
@@ -51,8 +50,6 @@
   margin: 0;
   padding: 0;
   font-family: var(--text-font);
-
-
 }
 
 /* Main content container */
@@ -71,16 +68,14 @@
   */
   border-radius: 51px;
   background: var(--mediumBlue);
-  box-shadow: inset 6px -6px 26px #69a6c5,
-  inset -6px 6px 26px #89d8ff;
+  box-shadow: inset 6px -6px 26px #69a6c5, inset -6px 6px 26px #89d8ff;
   border-radius: 10px;
   display: table;
   padding: var(--pd-2x);
   margin: auto;
   /* border: 2px solid var(--mediumOrange); */
-  
 }
-legend{
+legend {
   color: var(--darkOrange);
   font-weight: bolder;
 }
@@ -89,21 +84,22 @@ fieldset {
   margin: 1rem auto;
   padding: 0.3rem;
 }
-h1{
-  padding: .1em;
+h1 {
+  padding: 0.1em;
   width: 100%;
   /* margin: 0 auto; */
 }
-h1, h2 {
+h1,
+h2 {
   background-color: var(--lightBlue);
   border: solid 1px var(--cell-border);
   border-radius: var(--border_radius);
   color: var(--darkOrange);
-  font-family: var(--header-font);  
+  font-family: var(--header-font);
   margin-bottom: 1.2rem;
   /* margin-bottom: var(--mg-2x); */
 }
-h2{
+h2 {
   font-size: 1.7rem;
 }
 .form-table {
@@ -119,13 +115,12 @@ input {
 }
 
 input {
-  background-color: var(--lightOrange) ;
+  background-color: var(--lightOrange);
   margin-bottom: var(--mg-2x);
   padding: var(--pd-1x);
 }
-.add-row{
+.add-row {
   background: none;
-  
 }
 button {
   /* background-color: var(--lightBlue); */
@@ -133,8 +128,7 @@ button {
   /* border: 2px solid var(--darkBlue); */
   border-radius: 51px;
   background: #123e54;
-  box-shadow: inset 6px -6px 26px #103649,
-  inset -6px 6px 26px #14465f;
+  box-shadow: inset 6px -6px 26px #103649, inset -6px 6px 26px #14465f;
   color: var(--lightOrange);
   padding: 0.2em;
   font-size: var(--text-imp);
@@ -151,16 +145,16 @@ button {
   margin-top: 1.2rem;
 }
 
-.collapsible{
+.collapsible {
   position: relative;
   padding: 2px;
   text-align: center;
   width: 100%;
 }
-.totals-btn{
+.totals-btn {
   margin: 2rem auto;
 }
-.collapsible:after{
+.collapsible:after {
   position: absolute;
   top: 0;
   right: 100px;
@@ -168,20 +162,18 @@ button {
   font-size: 13px;
   /* color: #eee; */
   margin-left: 5px;
-
 }
 
-.collapsible-content{
+.collapsible-content {
   /* padding: 0 1.1px; */
   display: block;
   overflow: hidden;
   /* transition: max-height 0.3s ease-out; */
-  
 }
-.collapsible> .collapsible-content{
+.collapsible > .collapsible-content {
   /* display: none; */
 }
-.form-send_btn{
+.form-send_btn {
   display: block;
   margin-top: 1rem;
   /* width: 100%; */
